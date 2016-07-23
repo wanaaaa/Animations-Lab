@@ -18,7 +18,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
   private static final String TAG = "MyActivity";
   EditText inputWish;
-  TextView textView;
+
   Button addButon;
   ViewGroup viewGroup;
   /**
@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     addButon = (Button) findViewById(R.id.addButton) ;
     addButon.setOnClickListener(this);
 
-    textView = (TextView) findViewById(R.id.textView);
-
 
     //TODO: set up all the view and event listeners.
     // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -62,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     switch (v.getId()){
       case R.id.addButton:
+        TextView textView = new TextView(v.getContext());
         textView.setText(stWish);
-        viewGroup.addView(?????????????????);
+        viewGroup.addView(textView);
     }
    //       4. clear the input field
 
