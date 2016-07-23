@@ -1,10 +1,12 @@
 package generalassembly.yuliyakaleda.startercode;
 
+import android.animation.LayoutTransition;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   EditText inputWish;
   TextView textView;
   Button addButon;
+  ViewGroup viewGroup;
   /**
    * ATTENTION: This was auto-generated to implement the App Indexing API.
    * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -29,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    LayoutTransition layoutTransition = new LayoutTransition();
+    layoutTransition.enableTransitionType(LayoutTransition.CHANGING);
+
+    viewGroup = (ViewGroup) findViewById(R.id.ll);
+    viewGroup.setLayoutTransition(layoutTransition);
 
     addButon = (Button) findViewById(R.id.addButton) ;
     addButon.setOnClickListener(this);
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     switch (v.getId()){
       case R.id.addButton:
         textView.setText(stWish);
+        viewGroup.addView(?????????????????);
     }
    //       4. clear the input field
 
